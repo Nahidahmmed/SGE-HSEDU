@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="relative h-[650px] w-full max-w-[1400px] mx-auto rounded-3xl py-12 px-0 md:px-8 lg:px-16 overflow-hidden bg-blue-100">
       {/* Overlay content */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 ">
-        {/* 👉 Mobile Text Section */}
+        {/* Mobile Text Section */}
         <div className="block md:hidden px-6 text-center pt-20">
           <h1 className="text-4xl font-bold text-[#363B51]">
             Your Future Goes

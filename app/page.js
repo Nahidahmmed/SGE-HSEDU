@@ -1,7 +1,9 @@
+import Applications from "./Components/Applications";
 import Banner from "./Components/Banner";
 import Navbar from "./Components/Navbar";
 import SearcheForm from "./Components/SearcheForm";
 import StudyAbroad from "./Components/StudyAbroad";
+import StudyProgram from "./Components/StudyProgram";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <SearcheForm />
       </div>
       <StudyAbroad/>
+      <StudyProgram />
+      <Applications />
     </div>
   );
 }
