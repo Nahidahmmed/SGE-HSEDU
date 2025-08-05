@@ -1,4 +1,23 @@
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
+.swiper-pagination {
+  bottom: 0 !important;
+  margin-top: 30px; /* 30px gap */
+  position: relative !important; /* keeps it under the cards */
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #2563eb !important; /* Tailwind blue-600 */
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
 
 :root {
   --background: #ffffff;
