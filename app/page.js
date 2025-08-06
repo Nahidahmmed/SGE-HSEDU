@@ -1,13 +1,14 @@
 import Applications from "./Components/Applications";
 import Banner from "./Components/Banner";
 import Navbar from "./Components/Navbar";
+import Review from "./Components/Review";
 import SearcheForm from "./Components/SearcheForm";
 import StudyAbroad from "./Components/StudyAbroad";
 import StudyProgram from "./Components/StudyProgram";
 
 export default function Home() {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto bg-white">
       <Navbar />
       <Banner />
       <div
@@ -19,6 +20,7 @@ export default function Home() {
       <StudyAbroad/>
       <StudyProgram />
       <Applications />
+      <Review />
     </div>
   );
 }
