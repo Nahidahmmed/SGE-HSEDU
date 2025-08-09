@@ -1,6 +1,7 @@
 import Applications from "./Components/Applications";
 import Banner from "./Components/Banner";
 import Navbar from "./Components/Navbar";
+import Partners from "./Components/Partners";
 import Review from "./Components/Review";
 import SearcheForm from "./Components/SearcheForm";
 import StudyAbroad from "./Components/StudyAbroad";
@@ -21,6 +22,7 @@ export default function Home() {
       <StudyProgram />
       <Applications />
       <Review />
+      <Partners />
     </div>
   );
 }
