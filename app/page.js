@@ -1,6 +1,7 @@
 import Applications from "./Components/Applications";
 import Banner from "./Components/Banner";
 import ChannelPartners from "./Components/ChannelPartners";
+import FaqSection from "./Components/FaqSection";
 import Navbar from "./Components/Navbar";
 import Partners from "./Components/Partners";
 import Programs from "./Components/Programs";
@@ -27,6 +28,7 @@ export default function Home() {
       <Partners />
       <ChannelPartners />
       <Programs />
+      <FaqSection />
     </div>
   );
 }
