@@ -3,6 +3,7 @@ import Banner from "./Components/Banner";
 import ChannelPartners from "./Components/ChannelPartners";
 import Navbar from "./Components/Navbar";
 import Partners from "./Components/Partners";
+import Programs from "./Components/Programs";
 import Review from "./Components/Review";
 import SearcheForm from "./Components/SearcheForm";
 import StudyAbroad from "./Components/StudyAbroad";
@@ -25,6 +26,7 @@ export default function Home() {
       <Review />
       <Partners />
       <ChannelPartners />
+      <Programs />
     </div>
   );
 }
