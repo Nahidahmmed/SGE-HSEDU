@@ -1,12 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
-import { Bars3Icon, XMarkIcon, UserIcon,ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, UserIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close mobile menu on scroll
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleScroll = () => setMenuOpen(false);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
+
+  // Close menu if window resized to desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMenuOpen(false); // lg breakpoint
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <nav className="w-full bg-white fixed top-0 left-0 z-50">
@@ -16,7 +32,7 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             className="lg:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
             {menuOpen ? (
@@ -37,10 +53,7 @@ export default function Navbar() {
           <Link href="/students" className="text-gray-700 hover:text-blue-600">
             Students
           </Link>
-          <Link
-            href="/destinations"
-            className="text-gray-700 hover:text-blue-600"
-          >
+          <Link href="/destinations" className="text-gray-700 hover:text-blue-600">
             Study Destinations <ChevronDownIcon className="w-4 h-4 inline-block mb-1" />
           </Link>
           <Link href="/partners" className="text-gray-700 hover:text-blue-600">
@@ -68,33 +81,17 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white shadow-md absolute w-full left-0 top-[60px] px-4 py-3 space-y-3">
-          <Link
-            href="/"
-            className="block text-gray-700 hover:text-blue-600"
-            onClick={() => setMenuOpen(false)}
-          >
+        <div className="lg:hidden bg-white shadow-md absolute w-full left-0 top-[50px] px-4 py-3 space-y-3">
+          <Link href="/" className="block text-gray-700 hover:text-blue-600" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
-          <Link
-            href="/about"
-            className="block text-gray-700 hover:text-blue-600"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/about" className="block text-gray-700 hover:text-blue-600" onClick={() => setMenuOpen(false)}>
             About
           </Link>
-          <Link
-            href="/services"
-            className="block text-gray-700 hover:text-blue-600"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/services" className="block text-gray-700 hover:text-blue-600" onClick={() => setMenuOpen(false)}>
             Services
           </Link>
-          <Link
-            href="/contact"
-            className="block text-gray-700 hover:text-blue-600"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/contact" className="block text-gray-700 hover:text-blue-600" onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
         </div>

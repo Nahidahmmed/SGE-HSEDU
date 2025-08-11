@@ -2,6 +2,7 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 
+/* --- Swiper Pagination Styles --- */
 .swiper-pagination {
   bottom: 0 !important;
   margin-top: 30px; /* 30px gap */
@@ -18,12 +19,13 @@
   opacity: 1;
 }
 
-
+/* --- Force Light Theme --- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Remove dark theme overrides — always white */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -31,10 +33,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Override any dark mode preferences */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff; /* keep white */
+    --foreground: #171717; /* keep dark text */
   }
 }
 
